@@ -1,7 +1,7 @@
 #include <Morse.h>
-Morse m(13);
-char Code[100];
-int i,n=0;
+char c[150];
+Morse n(13);
+int i,k=0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -10,10 +10,10 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   while(Serial.available()>0){
-    Code[n]=Serial.read();
-    n++;
+    c[k]=Serial.read();
+    k++;
     }
-  for(i=0;i<n;i++){
-    m.changeMorse(Code[i],m);
+  for(i=0;i<k;i++){
+    n.changeMorse(c[i],n);
     }
 }
